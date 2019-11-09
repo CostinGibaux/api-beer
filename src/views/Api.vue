@@ -35,10 +35,6 @@
 
             </v-container>
 
-
-            <v-container>
-
-            </v-container>
         </div>
 
         </v-content>
