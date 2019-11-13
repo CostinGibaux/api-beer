@@ -3,7 +3,7 @@
         <v-content>
         <div>
             <div class="rechercheBarre">
-                <input type="text" v-model="search" placeholder="Chercher une bière"/>
+                <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Chercher une bière"/>
                 <!--<v-icon style="color: black">fas fa-search</v-icon>-->
             </div>
             <v-container >
@@ -14,7 +14,7 @@
                 </v-layout>
             </v-container>
             <div style="padding-top: 50px">
-                <div class="cadreConteneur" v-for="element in filter"
+                <div class="cadreConteneur" v-for="element in beers"
                      :key="element.id">
                     <span><span class="boldRed" style="font-weight: bold">Nom de la bière </span><span class="text"> : {{ element.name }} ({{element.abv}}°) :  </span></span>
                     <div class="cadreGrid">
@@ -49,7 +49,9 @@
         data(){
             return {
                 beers: [],
-                search: ''
+                search: null,
+                abv_gt: null,
+                brewed_before: null
             }
         },
         methods: {
@@ -63,15 +65,38 @@
                             this.beers = "pas de bière";
                         }
                     )
-            }
-        },
+            },
+            filter() {
+                let queryparams = "";
+                if(this.search !== null) {
+                    queryparams += "&beer_name=" + this.search
+                }
+                if(this.abv_gt !== null) {
+                    queryparams += "&abv_gt=" + this.abv_gt
+                }
+                if(this.brewed_before !== null) {
+                    queryparams += "&brewed_before=" + this.brewed_before
+                }
+                axios.get('https://api.punkapi.com/v2/beers?' + queryparams)
+                    .then((beer) => {
+                        console.log(beer.request.response);
+                        this.beers = JSON.parse(beer.request.response)
+                    })
+                    .catch(() => { // function()
+                            this.beers = "pas de bière";
+                        }
+                    )
+            },
+
+        }/*,
         computed: {
-            filter: function () {
+
+            {
                 return this.beers.filter((blog) => {
-                    return blog.name.match(this.search)
+                    return blog.name.toLowerCase().match(this.search.toLowerCase())
                 })
             }
-        }
+        }*/
     };
 </script>
 https://uigradients.com/#Memariani
