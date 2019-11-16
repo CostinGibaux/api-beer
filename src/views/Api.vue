@@ -1,33 +1,21 @@
 <template>
     <v-app dark class="back">
         <v-content>
-        <div>
-<<<<<<< HEAD
-            <v-container class="my-5">
-                <v-layout row wrap>
-                    <v-flex xs6>
-                        <v-card-text class="justify-center" >
-                            <v-btn @click="getMyBeer" class="buttonBeer">Veux tu ma bière jeune enfant</v-btn>
-                        </v-card-text>
-                        <v-card-text class="justify-center">
-                            <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Chercher une bière"/>
-                        </v-card-text>
-                        <v-card-text class="justify-center">
-
-                        </v-card-text>
-=======
-            <div class="rechercheBarre">
-                <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Chercher une bière"/>
-                <!--<v-icon style="color: black">fas fa-search</v-icon>-->
+            <div>
+                <v-container class="my-5">
+                    <v-layout row wrap>
+                        <v-flex xs6>
+                            <v-card-text class="justify-center" >
+                                <v-btn @click="getMyBeer" class="buttonBeer">Veux tu ma bière jeune enfant</v-btn>
+                            </v-card-text>
+                            <v-card-text class="justify-center">
+                                <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Chercher une bière"/>
+                            </v-card-text>
+                            <v-card-text class="justify-center"></v-card-text>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
             </div>
-            <v-container >
-                <v-layout justify-center="">
-                    <v-flex xs6>
-                        <button @click="getMyBeer" class="buttonBeer">Veux tu ma bière jeune enfant</button>
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
-                    </v-flex>
-                </v-layout>
-            </v-container>
             <div style="padding-top: 50px">
                 <div class="cadreConteneur" v-for="element in beers"
                      :key="element.id">
@@ -44,8 +32,6 @@
                         <br>
                         <img class="img" v-bind:src="element.image_url">
                     </div>
-<<<<<<< HEAD
-
                 </div>
                 <v-card-actions>
                     <v-btn @click="previousPage">Previous<a class="leftArrow" style="color: black"><v-icon size="50">keyboard_arrow_left</v-icon></a></v-btn>
@@ -53,25 +39,7 @@
                     <v-btn @click="nextPage">Next<a class="leftArrow"><v-icon size="50" style="color: black">keyboard_arrow_right</v-icon></a></v-btn>
                 </v-card-actions>
             </div>
-
-
-        </div>
         </v-content>
-        <!--
-        <footer>
-            <p>© all copyright reserved to me and myself for me and my other me</p>
-        </footer>-->
-=======
-                </div>
-            </div>
-            <v-container>
-
-            </v-container>
-
-        </div>
-
-        </v-content>
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
     </v-app>
 </template>
 
@@ -85,12 +53,9 @@
                 beers: [],
                 search: null,
                 abv_gt: null,
-<<<<<<< HEAD
                 brewed_before: null,
-                brewed_after: null
-=======
+                brewed_after: null,
                 brewed_before: null
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
             }
         },
         methods: {
@@ -105,7 +70,6 @@
                         }
                     )
             },
-<<<<<<< HEAD
 
             previousPage() {
 
@@ -114,8 +78,6 @@
 
             },
 
-=======
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
             filter() {
                 let queryparams = "";
                 if(this.search !== null) {
@@ -127,12 +89,9 @@
                 if(this.brewed_before !== null) {
                     queryparams += "&brewed_before=" + this.brewed_before
                 }
-<<<<<<< HEAD
                 if(this.brewed_after !== null) {
                     queryparams += "&brewed_after=" + this.brewed_after
                 }
-=======
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
                 axios.get('https://api.punkapi.com/v2/beers?' + queryparams)
                     .then((beer) => {
                         console.log(beer.request.response);
@@ -143,13 +102,10 @@
                         }
                     )
             },
-<<<<<<< HEAD
         }
         /*,
-=======
 
         }/*,
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
         computed: {
 
             {
@@ -207,11 +163,8 @@ https://uigradients.com/#Memariani
         color: white;
         background: linear-gradient(#FFC465, #FFBB4D);
         background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD 51%, #4CB8C4 100%);
-<<<<<<< HEAD
         transition-duration: 0.2s;
-=======
         transition-duration: 0.4s;
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
         width: 550px;
         height: 75px;
 
@@ -236,29 +189,24 @@ https://uigradients.com/#Memariani
     input{
         border: 3px solid #32e17c;
         height: 40px;
-<<<<<<< HEAD
         width: 200px;
-=======
         width: 300px;
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
         border-radius: 50px;
         padding: 0px 10px;
         color: #203A43;
         background-color: white;
     }
-<<<<<<< HEAD
     .arrow{
         bottom: 10vh;
         position: fixed;
 
     }
-    footer{
+    footer {
         margin-left: auto;
         margin-right: auto;
-=======
+    }
     input:hover{
         transition: width 0.2s ease-out;
         width: 500px;
->>>>>>> 9e31c95144b1d43b4241ff075fb03d84138c98ac
     }
 </style>
