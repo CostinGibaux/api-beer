@@ -4,17 +4,25 @@
             <div>
                 <v-container class="my-5">
                     <v-layout row wrap>
-                        <v-flex xs6>
-                            <v-card-text class="justify-center" >
-                                <v-btn @click="getMyBeer" class="buttonBeer">Veux tu ma bière jeune enfant</v-btn>
-                            </v-card-text>
+                        <v-flex xs20>
                             <v-card-text class="justify-center">
                                 <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Nom"/>
+                            </v-card-text>
+                        </v-flex>
+                        <v-flex xs20>
+                            <v-card-text class="justify-center">
                                 <input type="text" v-model="abv_gt" @keyup="filter" @emptied="getMyBeer" placeholder="ABV > à"/>
+                            </v-card-text>
+                        </v-flex>
+                        <v-flex xs20>
+                            <v-card-text class="justify-center">
                                 <input type="text" v-model="brewed_before" @keyup="filter" @emptied="getMyBeer" placeholder="brassée avant"/>
+                            </v-card-text>
+                        </v-flex>
+                        <v-flex xs20>
+                            <v-card-text class="justify-center">
                                 <input type="text" v-model="brewed_after" @keyup="filter" @emptied="getMyBeer" placeholder="brassée après"/>
                             </v-card-text>
-                            <v-card-text class="justify-center"></v-card-text>
                         </v-flex>
                     </v-layout>
                 </v-container>
@@ -134,7 +142,8 @@
 https://uigradients.com/#Memariani
 <style scoped>
     .back{
-        background: linear-gradient(#203A43, #2C5364);
+        /*background: linear-gradient(#203A43, #2C5364);*/
+        background: #2C5364;
     }
     .text{
         color: #42b983;
