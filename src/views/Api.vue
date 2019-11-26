@@ -57,12 +57,13 @@
                 search: null,
                 abv_gt: null,
                 brewed_before: null,
-                brewed_after: null
+                brewed_after: null,
+                page: 1
             }
         },
         methods: {
             getMyBeer() {
-                axios.get('https://api.punkapi.com/v2/beers')
+                axios.get('https://api.punkapi.com/v2/beers?page=' + this.page)
                     .then((beer) => {
                         console.log(beer.request.response);
                         this.beers = JSON.parse(beer.request.response)
@@ -74,10 +75,16 @@
             },
 
             previousPage() {
-
+                if(this.page > 1) {
+                    this.page--;
+                }
+                this.getMyBeer();
+                this.scrollToTop();
             },
             nextPage() {
-
+                this.page++;
+                this.getMyBeer();
+                this.scrollToTop();
             },
 
             filter() {
@@ -104,6 +111,12 @@
                         }
                     )
             },
+            scrollToTop() {
+                window.scrollTo(0,0);
+            }
+        },
+        mounted: function() {
+            this.getMyBeer();
         }
         /*,
 
