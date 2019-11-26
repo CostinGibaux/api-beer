@@ -9,7 +9,10 @@
                                 <v-btn @click="getMyBeer" class="buttonBeer">Veux tu ma bière jeune enfant</v-btn>
                             </v-card-text>
                             <v-card-text class="justify-center">
-                                <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Chercher une bière"/>
+                                <input type="text" v-model="search" @keyup="filter" @emptied="getMyBeer" placeholder="Nom"/>
+                                <input type="text" v-model="abv_gt" @keyup="filter" @emptied="getMyBeer" placeholder="ABV > à"/>
+                                <input type="text" v-model="brewed_before" @keyup="filter" @emptied="getMyBeer" placeholder="brassée avant"/>
+                                <input type="text" v-model="brewed_after" @keyup="filter" @emptied="getMyBeer" placeholder="brassée après"/>
                             </v-card-text>
                             <v-card-text class="justify-center"></v-card-text>
                         </v-flex>
@@ -54,8 +57,7 @@
                 search: null,
                 abv_gt: null,
                 brewed_before: null,
-                brewed_after: null,
-                brewed_before: null
+                brewed_after: null
             }
         },
         methods: {
