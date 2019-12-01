@@ -13,9 +13,11 @@
     - [- ***Costin Gibaux***](#costin-gibaux)
     - [- ***Julien Chigot***](#julien-chigot)
 - [Sommaire :](#sommaire)
-  - [Descriptif de l'api choisi :](#descriptif-de-lapi-choisi)
-  - [Installation et lancement de notre projet :](#installation-et-lancement-de-notre-projet)
-  - [Page d'accueil <a id="chapter-3"></a>](#page-daccueil-a-id%22chapter-3%22a)
+  - [Descriptif de l'api choisi](#descriptif-de-lapi-choisi)
+  - [Installation et lancement de notre projet](#installation-et-lancement-de-notre-projet)
+  - [Page d'accueil](#page-daccueil)
+  - [API](#API)
+  - [Conclusion](#conclusion)
 
 
 <br>
@@ -41,17 +43,17 @@ Pour installer notre projet il faut suivre les étapes suivantes :
 
 - Tout d'abord rendez vous sur notre [gitlab](https://gitlab.com/CGibaux/api-beer) afin de télécharger notre projet.
 - Ensuite il vous faudra soit cloner notre projet :
-![clone.png](:storage\299fea3d-2f2c-4a7a-b828-2fbed93695ea\130ca18b.png)
+![clone](../api-beer/src/assets/img/markdown/clone.png)
 
 <br>
 
 - Soit télécharger le .zip :
-![dl-zippng.png](:storage\299fea3d-2f2c-4a7a-b828-2fbed93695ea\655862c4.png)
+![dl-zippng](../api-beer/src/assets/img/markdown/dl-zippng.png)
 
 <br>
 
 - Une fois fait, il suffit de lancer votre terminal et de vous rendre dans votre projet : 
-![cmd.PNG](:storage\299fea3d-2f2c-4a7a-b828-2fbed93695ea\cd1e2c54.PNG)
+![cmd](../api-beer/src/assets/img/markdown/cmd.png)
 
 <br>
 
@@ -74,7 +76,40 @@ npm run serve
 <br>
 <br>
 
-## Page d'accueil <a id="chapter-3"></a>
+## Page d'accueil :
+<br>
+
+Sur la page d'accueil se trouve notre carousel (laisser le carousel faire défiler les images, il se peut qu'il se trouve un trésor dans les deux dernières images.)
 
 <br>
+<br>
+<br>
+<br>
+<br>
+
+ ## API :
+ 
+ <br>
+ 
+ Sur la page vous pouvez trouver plusieurs fonctionnalités.
+ 
+Premièrement quand vous êtes sur la page en haut vous trouverez la première page de bière affichée de base. Vous avez le choix entre défiler entre les pages avec les boutons pour changer de page (Previous and Next).
+ 
+Sinon il y a en haut 4 barres de recherche qui vous permettent d'affiner votre recherche à votre guise. 
+
+La première cherche en fonction du nom, la seconde vous permet de mettre un degré d'alcool et la recherche va vous mettre toute les bières avec le même degré d'alcool ou plus que votre recherche.
+
+Les deux dernières sont selon la date sois d'avant la première brassade soit après.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Conclusion :
+
+<br>
+
+Notre projet vous propose une variétée de bières que vous pouvez simplement regarder en les défilant à l'aide des pages ou si vous rechercher une bière précisément vous pouvez la trouver (si elle se trouve dans l'API) avec nos barre de recherche.
 
