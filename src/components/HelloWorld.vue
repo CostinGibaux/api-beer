@@ -1,11 +1,12 @@
 <template>
   <v-app class="back">
     <v-container>
+      <!--Le composant du carousel-->
       <v-carousel
               cycle
               show-arrows-on-hover
               :height="1000"
-      >
+      > <!--Option du carousel-->
         <v-carousel-item
                 v-for="(item,i) in items"
                 :key="i"
@@ -23,13 +24,14 @@ export default {
 
   data: () => ({
     colors: [
+      // Les couleurs au cas ou il n'y aurait pas de photo (inutilisé dans notre cas)
       'indigo',
       'warning',
       'pink darken-2',
       'red lighten-1',
       'deep-purple accent-4',
     ],
-    items: [
+    items: [ // Ici on met le lien de nos image qui iront s'afficher dans carousel
       {
         src: require('../assets/img/markdown/clone.png')
       },
