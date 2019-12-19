@@ -2,51 +2,59 @@
   <v-app>
     <v-app-bar
             app
-            color="#4286f4"
+            color="primary"
             dark
     >
-
       <div class="d-flex align-center">
-        <v-container>
-          <v-btn href="http://localhost:8080/">
-            <v-toolbar-title class="headline text-uppercase">
-              <span> Home &nbsp;&nbsp;</span>
-            </v-toolbar-title>
-          </v-btn>
-        </v-container>
-      </div>
-      <div>
-        <v-container>
-          <v-btn href="http://localhost:8080/api">
-            <v-toolbar-title class="headline text-uppercase">
-              <span class="font-weight-bold"> API de bière</span>
-            </v-toolbar-title>
-          </v-btn>
-        </v-container>
+        <v-img
+                alt="Vuetify Logo"
+                class="shrink mr-2"
+                contain
+                src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+                transition="scale-transition"
+                width="40"
+        />
+
+        <v-img
+                alt="Vuetify Name"
+                class="shrink mt-1 hidden-sm-and-down"
+                contain
+                min-width="100"
+                src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+                width="100"
+        />
       </div>
 
+      <v-spacer></v-spacer>
 
+      <v-btn
+              href="https://github.com/vuetifyjs/vuetify/releases/latest"
+              target="_blank"
+              text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
-      <router-view/>
+      <HelloWorld/>
     </v-content>
   </v-app>
 </template>
 
 <script>
+  import HelloWorld from './components/HelloWorld';
 
-export default {
-  name: 'App',
+  export default {
+    name: 'App',
 
-  data: () => ({
-    //
-  }),
-};
+    components: {
+      HelloWorld,
+    },
+
+    data: () => ({
+      //
+    }),
+  };
 </script>
-
-<!--
-
-
-
--->

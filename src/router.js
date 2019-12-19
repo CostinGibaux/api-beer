@@ -22,18 +22,6 @@ export default new Router({
       component: function () { 
         return import(/* webpackChunkName: "about" */ './views/About.vue')
       }
-    }, {
-      path: '/test',
-      name: 'api',
-      component: function () {
-        return import ('./views/Test.vue')
-      }
-    }, {
-      path: '/api',
-      name: 'api',
-      component: function () {
-        return import('./views/Api.vue')
-      }
-    }
+    },
   ]
 })
